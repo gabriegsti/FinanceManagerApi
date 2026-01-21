@@ -1,4 +1,4 @@
-﻿namespace FinanceManagerApi.Entities
+﻿namespace FinanceManager.Domain.Entities
 {
     public class Asset
     {
@@ -25,7 +25,7 @@
             Currency = currency;
         }
 
-        public void UpdateValue(decimal newValue, Currency targetCurrency)
+        public void ConvertToTargetCurrency(decimal newValue, Currency targetCurrency)
         {
             if(newValue >= 0)
             {

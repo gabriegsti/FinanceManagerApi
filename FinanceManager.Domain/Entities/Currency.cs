@@ -1,4 +1,4 @@
-﻿namespace FinanceManagerApi.Entities
+﻿namespace FinanceManager.Domain.Entities
 {
     public class Currency
     {
