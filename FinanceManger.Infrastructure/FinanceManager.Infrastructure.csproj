@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FinanceManager.Application\FinanceManager.Application.csproj" />
+    <ProjectReference Include="..\FinanceManager.ApiClient\FinanceManager.ApiClient.csproj" />
   </ItemGroup>
 
 </Project>

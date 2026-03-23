@@ -1,12 +1,13 @@
-﻿using FinanceManager.Domain.Entities;
+﻿using FinanceManager.Application.DTOs;
+
 
 namespace FinanceManager.Application.Interfaces
 {
     public interface ICurrencyService
     {
-        Task<Currency> CreateCurrencyAsync(Currency currency);
-        Task<Currency?> GetCurrencyByIdAsync(Guid id);
-        Task<IEnumerable<Currency>> GetAllCurrenciesAsync();
-        Task<Currency> UpdateCurrencyAsync();
+        Task<CurrencyDTO> CreateCurrencyAsync(CurrencyDTO currency);
+        Task<CurrencyDTO?> GetCurrencyByIdAsync(Guid id);
+        Task<IEnumerable<CurrencyDTO>> GetAllCurrenciesAsync();
+        Task<CurrencyDTO> UpdateCurrencyAsync();
     }
 }
