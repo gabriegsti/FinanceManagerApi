@@ -16,9 +16,11 @@ namespace FinanceManager.WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult<CurrencyDTO> Get(CurrencyDTO currency) 
+        public ActionResult<CurrencyDTO> Get(CurrencyDTO currency) 
         {
-            _currencyService.CreateCurrencyAsync(currency); //TODO: currency workflow
+            _currencyService.CreateCurrencyAsync(currency);
+
+            return Ok(currency);//TODO: currency workflow
         }
     }
 }
