@@ -24,6 +24,10 @@
             Price = price;
             Currency = currency;
         }
+        public Asset()
+        {
+            
+        }
 
         // Needs refactoring to use Currency class instead of CurrencyCode enum
         //public void ConvertToTargetCurrency(decimal newValue, Currency targetCurrency)

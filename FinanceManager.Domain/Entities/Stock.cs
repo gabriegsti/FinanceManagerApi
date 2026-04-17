@@ -1,21 +1,17 @@
 ﻿namespace FinanceManager.Domain.Entities
 {
-    public class Stock : Asset
+    public class Stock
     {
-        public Stock(
-            string name,
-            string code,
-            string description,
-            decimal value,
-            CurrencyCode currency) 
-            : base(name, code, description, value, currency)
+        public Stock()
         {
+            
         }
         public string Symbol { get; set; }
         public decimal RegularMarketPrice { get; set; }
-        public decimal EarningsPerShare { get; set; }
-        public decimal PriceEarnings { get; set; }
-        public decimal NetProfitMargin { get; set; }
-        public decimal MarketCap { get; set; }
+        //public decimal EarningsPerShare { get; set; }
+        //public decimal PriceEarnings { get; set; }
+        //public decimal NetProfitMargin { get; set; }
+        //public decimal MarketCap { get; set; }
+
     }
 }

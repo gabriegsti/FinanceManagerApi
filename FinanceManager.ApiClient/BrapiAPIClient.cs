@@ -18,9 +18,10 @@ namespace FinanceManager.BrapiApiClient
             _httpClient.BaseAddress = new Uri("https://brapi.dev");
             var response = await _httpClient.GetAsync("/api/quote/PETR4,VALE3,MGLU3,ITUB4?range=2d&interval=1d");
             var content = await response.Content.ReadAsStringAsync();
-            var quoteResponse = JsonSerializer.Deserialize<QuoteResponse>(content);
+            var quoteResponse = JsonSerializer
+                .Deserialize<QuoteResponse>(content,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             
-            //TODO: Mapping is broke. It should desserialize to send a list of stocks 
             if (quoteResponse != null)
             {
                 return quoteResponse.Results;
