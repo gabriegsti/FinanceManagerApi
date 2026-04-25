@@ -4,6 +4,6 @@ namespace FinanceManager.ApiClient.Response
 {
     public class QuoteResponse
     {
-        public List<Stock> Results { get; set; }
+        public List<StockResponse> Results { get; set; }
     }
 }
