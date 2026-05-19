@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: financemanagerapi-service
+spec:
+  type: NodePort #Inside cloudproviders use:  LoadBalancer
+  selector:
+    app: financemanagerapi   #It should match with Deployment label 
+  ports:
+    - port: 8080 #Port that the service will listen on
+      targetPort: 8080 #Port on the container that the service should forward to
+      nodePort: 30080 #Port on the node that will be exposed

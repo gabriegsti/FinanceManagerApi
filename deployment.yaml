@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: financemanagerapi-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: financemanagerapi   #should match with Deployment label
+  template:
+    metadata:
+      labels:
+        app: financemanagerapi
+    spec:
+      containers:
+      - name: financemanagerapi
+        image: gabrielgsdevbr/financemanagerapi:latest
+        ports:
+        - containerPort: 8080
+        
+  

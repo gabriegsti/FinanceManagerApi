@@ -7,10 +7,10 @@
             
         }
         public string Symbol { get; set; }
-        public decimal RegularMarketPrice { get; set; }
-        public decimal EarningsPerShare { get; set; }
-        public decimal PriceEarnings { get; set; }
-        public decimal NetProfitMargin { get; set; }
-        public decimal MarketCap { get; set; }
+        public decimal? RegularMarketPrice { get; set; }
+        public decimal? EarningsPerShare { get; set; }
+        public decimal? PriceEarnings { get; set; }
+        public decimal? NetProfitMargin { get; set; }
+        public decimal? MarketCap { get; set; }
     }
 }
