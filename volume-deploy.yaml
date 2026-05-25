@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  mssql-deployment #deployment name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mssql #match with selector label
+  template:
+    metadata:
+      labels:
+        app: mssql #match with selector label
+    spec:
+      containers:
+      - name: mssql #match with selector label
+        image: mcr.microsoft.com/mssql/server:2019-latest #Change image because this one didnt work. 
+        ports:
+        - containerPort: 1433
+        env:
+        - name: MSSQL_PID
+          value: "Developer"
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: SA_PASSWORD
+          value: "Admin123456#"
+        volumeMounts:
+        - name: mssqldb
+          mountPath: /var/opt/mssql/data
+      volumes:
+      - name: mssqldb
+        persistentVolumeClaim:
+          claimName: mssql-pvc #pvc name
+        

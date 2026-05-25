@@ -1,0 +1,19 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: financemanagerapi-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: / #Where starts the requests that should be redirected.
+spec:
+  rules: #It is also possible to specify host here as domain.com, or *.domain.com
+  - http: 
+      paths:
+      - path: / #Where redirected requests will start. 
+        pathType: Prefix
+        backend:
+          service:
+            name: financemanagerapi-service #match service name
+            port:
+              number: 8080 #match service port
