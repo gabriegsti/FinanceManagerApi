@@ -7,9 +7,9 @@
         public string Code { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public string Currency { get; set; }
+        public CurrencyCode CurrencyCode { get; set; }
 
-        public Asset(string name, string code, string description, decimal price, string currency)
+        public Asset(string name, string code, string description, decimal price, CurrencyCode currencyCode)
         {
             if (String.IsNullOrEmpty(name))
                 throw new ArgumentNullException("name");
@@ -22,7 +22,7 @@
             Code = code;
             Description = description;
             Price = price;
-            Currency = currency;
+            CurrencyCode = currencyCode;
         }
         public Asset()
         {

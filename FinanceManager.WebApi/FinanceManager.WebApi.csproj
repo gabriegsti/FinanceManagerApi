@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FinanceManager.ApiClient\FinanceManager.ApiClient.csproj" />
     <ProjectReference Include="..\FinanceManger.Infrastructure\FinanceManager.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -7,7 +7,7 @@
         public CurrencyCode Code { get; set; }
         public decimal ExchangeRateInUSDollar { get; set; } = decimal.Zero;
 
-        public Currency(string name, decimal exchangeRateInUSDollar)
+        public Currency(string name, decimal exchangeRateInUSDollar, CurrencyCode code)
         {
             if (String.IsNullOrEmpty(name))
             {

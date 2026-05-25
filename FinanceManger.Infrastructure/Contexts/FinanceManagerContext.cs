@@ -13,5 +13,7 @@ namespace FinanceManger.Infrastructure.Contexts
 
         internal DbSet<Currency> Currencies { get; set; }
         internal DbSet<Asset> Assets { get; set; }
+        internal DbSet<Stock> Stocks { get; set; }
+
     }
 }
