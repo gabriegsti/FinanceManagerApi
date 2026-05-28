@@ -9,9 +9,9 @@ namespace FinanceManager.Infrastructure.Repositories
 {
     public class StocksRepository : IStocksRepository
     {
-        private readonly FinanceManagerContext _context;
+        private readonly FinanceManagerDbContext _context;
         private readonly ICurrencyService _currencyService;
-        public StocksRepository(FinanceManagerContext context, ICurrencyService currencyService)
+        public StocksRepository(FinanceManagerDbContext context, ICurrencyService currencyService)
         {
             _context = context;
         }
