@@ -32,7 +32,7 @@ namespace FinanceManager.BrapiApiClient
                     EarningsPerShare = stockResponse.EarningsPerShare,
                     PriceEarnings = stockResponse.PriceEarnings,
                     MarketCap = stockResponse.MarketCap,
-                    Currency = stockResponse.Currency,
+                    CurrencyCode = Enum.TryParse<CurrencyCode>(stockResponse.Currency, out var currency) ? currency : CurrencyCode.USD,
                     Name = stockResponse.longName,
                 };
                 stocks.Add(stock);
