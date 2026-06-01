@@ -16,6 +16,8 @@ namespace FinanceManager.Infrastructure.DependencyInjection
                 .UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services
                 .AddScoped<IStocksRepository, StocksRepository>();
+            services
+                .AddScoped<ICurrencyRepository, CurrencyRepository>();
 
             return services;
         }

@@ -1,39 +1,49 @@
-﻿//using FinanceManager.Domain.Abstractions;
-//using FinanceManager.Domain.Entities;
-//using FinanceManger.Infrastructure.Contexts;
-//using Microsoft.EntityFrameworkCore;
+﻿using FinanceManager.Application.DTOs;
+using FinanceManager.Application.Interfaces;
+using FinanceManager.Domain.Entities;
+using FinanceManger.Infrastructure.Contexts;
 
 
-//TODO: Refactor to work with api client instead or repository
-//namespace FinanceManger.Infrastructure.Repositories
-//{
-//    public class CurrencyRepository : ICurrencyRepository
-//    {
-//        private readonly FinanceManagerContext _context;
-//        public CurrencyRepository(FinanceManagerContext context)
-//        {
-//            _context = context;
-//        }
-//        public Task<Currency> CreateCurrencyAsync(Currency currency)
-//        {
-//            _context.Currencies.Add(currency);
-//            return _context.SaveChangesAsync()
-//                .ContinueWith(_ => currency);
-//        }
+namespace FinanceManager.Infrastructure.Repositories
+{
+    public class CurrencyRepository : ICurrencyRepository
+    {
+        private readonly FinanceManagerDbContext _context;
+        public CurrencyRepository(FinanceManagerDbContext context)
+        {
+            _context = context;
+        }
+        public Task<Currency> CreateCurrencyAsync(Currency currency)
+        {
+            _context.Currencies.Add(currency);
 
-//        public Task<IEnumerable<Currency>> GetAllCurrenciesAsync()
-//        {
-//            throw new NotImplementedException();
-//        }
+            return _context.SaveChangesAsync()
+                .ContinueWith(_ => currency);
+        }
 
-//        public Task<Currency?> GetCurrencyByIdAsync(Guid id)
-//        {
-//            throw new NotImplementedException();
-//        }
+        public Task DeleteCurrencyByIdAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
 
-//        public Task<Currency> UpdateCurrencyAsync(Currency currency)
-//        {
-//            throw new NotImplementedException();
-//        }
-//    }
-//}
+        public Task<IEnumerable<CurrencyDTO>> GetAllCurrenciesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Currency> GetCurrencyByCodeAsync(CurrencyCode code)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Currency?> GetCurrencyByIdAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Currency> UpdateCurrencyAsync(Currency currency)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

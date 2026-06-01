@@ -5,11 +5,11 @@ namespace FinanceManager.Application.Interfaces
 {
     public interface ICurrencyRepository
     {
-        Task<CurrencyDTO> CreateCurrencyAsync(CurrencyDTO currency);
-        Task<CurrencyDTO> GetCurrencyByIdAsync(Guid id);
+        Task<Currency> CreateCurrencyAsync(Currency currency);
+        Task<Currency> GetCurrencyByIdAsync(Guid id);
         Task<IEnumerable<CurrencyDTO>> GetAllCurrenciesAsync();
-        Task<CurrencyDTO> UpdateCurrencyAsync();
+        Task<Currency> UpdateCurrencyAsync(Currency currency);
         Task DeleteCurrencyByIdAsync(Guid id);
-        Task<CurrencyDTO> GetCurrencyByCodeAsync(CurrencyCode code);
+        Task<Currency> GetCurrencyByCodeAsync(CurrencyCode code);
     }
 }
