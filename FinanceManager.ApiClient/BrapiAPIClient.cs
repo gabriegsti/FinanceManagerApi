@@ -1,14 +1,16 @@
 ﻿using FinanceManager.ApiClient.Response;
+using FinanceManager.Application.DTOs;
+using FinanceManager.Application.Interfaces;
 using FinanceManager.Domain.Entities;
 using FinanceManager.Domain.Interfaces;
 using System.Text.Json;
 
 namespace FinanceManager.BrapiApiClient
 {
-    public class BrapiApiClient : IAssetsApiClient
+    public class BrapiApiClientService : IAssetsApiClient
     {
         private readonly HttpClient _httpClient;    
-        public BrapiApiClient(HttpClient httpClient)
+        public BrapiApiClientService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
@@ -32,13 +34,13 @@ namespace FinanceManager.BrapiApiClient
                     EarningsPerShare = stockResponse.EarningsPerShare,
                     PriceEarnings = stockResponse.PriceEarnings,
                     MarketCap = stockResponse.MarketCap,
-                    Currency = stockResponse.Currency,
+                    CurrencyCode = Enum.TryParse<CurrencyCode>(stockResponse.Currency, out var currency) ? currency : CurrencyCode.USD,
                     Name = stockResponse.longName,
                 };
+
                 stocks.Add(stock);
             });
-
-
+            
             if (quoteResponse != null)
             {
                 return stocks;

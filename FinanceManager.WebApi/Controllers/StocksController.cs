@@ -1,4 +1,5 @@
-﻿using FinanceManager.Application.Interfaces;
+﻿using FinanceManager.Application.DTOs;
+using FinanceManager.Application.Interfaces;
 using FinanceManager.Domain.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,23 @@ namespace FinanceManager.WebApi.Controllers
 
             return BadRequest();
         }
+
+        [HttpPost]
+        public async Task<ActionResult<StockDTO>> CreateStocksAsync(StockDTO stock)
+        {
+            try
+            {
+                var stockCreated = await _stockService.CreateStockAsync(stock);
+                return Ok(stockCreated);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"It wasnt possible to create stock data: {ex}");
+            }
+
+            return BadRequest();
+        }
+
 
     }
 }

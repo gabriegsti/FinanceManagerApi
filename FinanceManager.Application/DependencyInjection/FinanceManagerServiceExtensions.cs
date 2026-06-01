@@ -10,6 +10,7 @@ namespace FinanceManager.Application.DependencyInjection
             this IServiceCollection services)
         {
             services.AddScoped<IStockService, StockService>();
+            services.AddScoped<ICurrencyService, CurrencyService>();
 
             return services;
         }
