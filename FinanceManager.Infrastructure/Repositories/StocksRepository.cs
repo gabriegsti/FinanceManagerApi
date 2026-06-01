@@ -3,7 +3,6 @@ using FinanceManager.Application.Interfaces;
 using FinanceManager.Application.Mappers;
 using FinanceManager.Domain.Entities;
 using FinanceManger.Infrastructure.Contexts;
-using Microsoft.EntityFrameworkCore;
 
 namespace FinanceManager.Infrastructure.Repositories
 {

@@ -1,4 +1,6 @@
-﻿namespace FinanceManager.ApiClient.Response
+﻿using FinanceManager.Domain.Entities;
+
+namespace FinanceManager.ApiClient.Response
 {
     public class StockResponse
     {
@@ -13,5 +15,6 @@
         public decimal? EarningsPerShare { get; set; } = 0;
         public string? LogoUrl { get; set; }
         public decimal? MarketCap { get; set; }
+        public string? Name { get; set; }
     }
 }

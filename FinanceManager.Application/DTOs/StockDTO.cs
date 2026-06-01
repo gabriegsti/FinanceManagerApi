@@ -12,5 +12,6 @@ namespace FinanceManager.Application.DTOs
         public decimal? NetProfitMargin { get; set; }
         public decimal? MarketCap { get; set; }
         public CurrencyCode CurrencyCode { get; set; } = CurrencyCode.USD;
+        public string Name { get; set; }
     }
 }
